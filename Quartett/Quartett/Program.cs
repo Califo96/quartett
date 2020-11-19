@@ -6,7 +6,22 @@ namespace Quartett
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Basti stinkt!");
+            
         }
+    }
+
+    class Controller
+    {
+
+    }
+
+    class Karte
+    {
+
+    }
+
+    class Spiel
+    {
+
     }
 }
