@@ -16,7 +16,7 @@ namespace Quartett
 
             Karte temp = list.Find(i => i.getGewicht() == 2000);
             Console.WriteLine(temp.getName());
-
+            Console.WriteLine("Basti ist doof!");
             //Spiel spiel = new Spiel(2);
         }
     }
@@ -45,15 +45,7 @@ namespace Quartett
             herLand = pherLand;
         }
 
-        public int getGewicht()
-        {
-            return gewicht;
-        }
-
-        public string getName()
-        {
-            return name;
-        }
+        
     }
 
     class Spiel
