@@ -71,7 +71,7 @@ namespace Quartett
 
         private void austeilen()
         {
-
+            Console.WriteLine("Ich teile die Karten aus.");
         }
 
         private void startmenu()
