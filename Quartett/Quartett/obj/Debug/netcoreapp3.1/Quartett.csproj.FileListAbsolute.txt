@@ -1,0 +1,11 @@
+C:\Users\sebas\Documents\quartett\Quartett\Quartett\obj\Debug\netcoreapp3.1\Quartett.csprojAssemblyReference.cache
+C:\Users\sebas\Documents\quartett\Quartett\Quartett\obj\Debug\netcoreapp3.1\Quartett.AssemblyInfoInputs.cache
+C:\Users\sebas\Documents\quartett\Quartett\Quartett\obj\Debug\netcoreapp3.1\Quartett.AssemblyInfo.cs
+C:\Users\sebas\Documents\quartett\Quartett\Quartett\bin\Debug\netcoreapp3.1\Quartett.exe
+C:\Users\sebas\Documents\quartett\Quartett\Quartett\bin\Debug\netcoreapp3.1\Quartett.deps.json
+C:\Users\sebas\Documents\quartett\Quartett\Quartett\bin\Debug\netcoreapp3.1\Quartett.runtimeconfig.json
+C:\Users\sebas\Documents\quartett\Quartett\Quartett\bin\Debug\netcoreapp3.1\Quartett.runtimeconfig.dev.json
+C:\Users\sebas\Documents\quartett\Quartett\Quartett\bin\Debug\netcoreapp3.1\Quartett.dll
+C:\Users\sebas\Documents\quartett\Quartett\Quartett\bin\Debug\netcoreapp3.1\Quartett.pdb
+C:\Users\sebas\Documents\quartett\Quartett\Quartett\obj\Debug\netcoreapp3.1\Quartett.dll
+C:\Users\sebas\Documents\quartett\Quartett\Quartett\obj\Debug\netcoreapp3.1\Quartett.pdb
