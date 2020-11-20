@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vinze\\OneDrive\\Documents\\quartett\\Quartett\\Quartett\\Quartett.csproj": {}
+    "C:\\Users\\tobir\\OneDrive\\Dokumente\\quartett\\Quartett\\Quartett\\Quartett.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vinze\\OneDrive\\Documents\\quartett\\Quartett\\Quartett\\Quartett.csproj": {
+    "C:\\Users\\tobir\\OneDrive\\Dokumente\\quartett\\Quartett\\Quartett\\Quartett.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vinze\\OneDrive\\Documents\\quartett\\Quartett\\Quartett\\Quartett.csproj",
+        "projectUniqueName": "C:\\Users\\tobir\\OneDrive\\Dokumente\\quartett\\Quartett\\Quartett\\Quartett.csproj",
         "projectName": "Quartett",
-        "projectPath": "C:\\Users\\vinze\\OneDrive\\Documents\\quartett\\Quartett\\Quartett\\Quartett.csproj",
-        "packagesPath": "C:\\Users\\vinze\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vinze\\OneDrive\\Documents\\quartett\\Quartett\\Quartett\\obj\\",
+        "projectPath": "C:\\Users\\tobir\\OneDrive\\Dokumente\\quartett\\Quartett\\Quartett\\Quartett.csproj",
+        "packagesPath": "C:\\Users\\tobir\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tobir\\OneDrive\\Dokumente\\quartett\\Quartett\\Quartett\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vinze\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tobir\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -49,6 +49,16 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
