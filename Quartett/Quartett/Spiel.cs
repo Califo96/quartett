@@ -22,10 +22,7 @@ namespace Quartett
             Console.WriteLine("Ich teile die Karten aus.");
         }
 
-        private void startmenu()
-        {
-
-        }
+        
 
         private int vergleiche()
         {

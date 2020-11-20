@@ -6,17 +6,55 @@ namespace Quartett
 {
     public class Karte
     {
-        private int ps { get; set; }
-        private double beschleunigung { get; set; }
-        private int maxV { get; set; }
-        private int gewicht { get; set; }
-        private int hubraum { get; set; }
-        private int zylinder { get; set; }
-        private int index { get; set; }
-        private string name { get; set; }
-        private string herLand { get; set; }
+        private int ps;
+        private double beschleunigung;
+        private int maxV;
+        private int gewicht;
+        private int hubraum;
+        private int zylinder;
+        private int index;
+        private string Name;
+        private string herLand;
 
-        /*public Karte(int pps, double pbeschleunigung, int pmaxV, int pgewicht, int phubraum, int pzylinder, string pname, string pherLand)
+        public int getPs()
+        {
+            return ps;
+        }
+
+        public double getBeschleunigung()
+        {
+            return beschleunigung;
+        }
+        public int getMaxV()
+        {
+            return maxV;
+        }
+        public int getGewicht()
+        {
+            return gewicht;
+        }
+        public int getHubraum()
+        {
+            return hubraum;
+        }
+        public int getZylinder()
+        {
+            return zylinder;
+        }
+        public int getIndex()
+        {
+            return index;
+        }
+        public string getName()
+        {
+            return Name;
+        }
+        public string getHerLand()
+        {
+            return herLand;
+        }
+
+        public Karte(int pps, double pbeschleunigung, int pmaxV, int pgewicht, int phubraum, int pzylinder, string pname, string pherLand)
         {
             ps = pps;
             beschleunigung = pbeschleunigung;
@@ -24,11 +62,8 @@ namespace Quartett
             gewicht = pgewicht;
             hubraum = phubraum;
             zylinder = pzylinder;
-            name = pname;
+            Name = pname;
             herLand = pherLand;
-        } */
-
-        Karte Number1 = new Karte();
-        Number1.name = "Lamborghini Avantador";
+        } 
     }
 }
