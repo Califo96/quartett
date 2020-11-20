@@ -7,7 +7,7 @@ namespace Quartett
     class Spiel
     {
         private int anzahlSpieler;
-        private List<Karte> kartenStapel = new List<Karte>();
+        private Liste kartenStapel = new Liste();
         private Queue<Karte>[] kartenSchlangen;
         private Stack<Karte> tempStapel = new Stack<Karte>();
 
@@ -19,7 +19,24 @@ namespace Quartett
 
         private void austeilen()
         {
-            Console.WriteLine("Ich teile die Karten aus.");
+            //Console.WriteLine("Ich teile die Karten aus.");
+
+            Random r = new Random();
+
+            int cards = 32;
+
+            double cardspp = 32 / anzahlSpieler;
+            cardspp = Math.Floor(cardspp);
+
+            for (int i = (int)cardspp; i < 0; i--)
+            {
+                for(int j = 0; i < anzahlSpieler; i++)
+                {
+                    kartenSchlangen[i].Enqueue(kartenStapel.);
+                    kartenStapel.
+                }
+            }
+
         }
 
         private void startmenu()
@@ -29,6 +46,7 @@ namespace Quartett
 
         private int vergleiche()
         {
+            
             return 0;
         }
 

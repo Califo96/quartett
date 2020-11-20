@@ -8,6 +8,7 @@ namespace Quartett
     {
         static void Main(string[] args)
         {
+            
             Karte k1 = new Karte(300, 4.9, 230, 2000, 3000, 6, "BMW 3er", "GER" );
             Karte k2 = new Karte(100, 10.5, 180, 1800, 1000, 3, "Mini Clubman", "GBR");
             List<Karte> list = new List<Karte>();
