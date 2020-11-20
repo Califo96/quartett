@@ -7,41 +7,25 @@ namespace Quartett
     class Controller
     {
         private int Spieler;
-
-        public void setSpieler(int i)
-        {
-            Spieler = i;
-        }
         
         private void startmenu()
         {
-            Console.WriteLine(" _____________________________________________________________________________________________________________________");
-            Console.WriteLine("|");
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
+            
             Console.WriteLine("Hallo! Willkommen beim Quartettspiel!");
+            Console.WriteLine("Wenn ihr loslegen wollt, sagt uns schnell wie viele Spieler ihr seid!");
+            Console.Write("Anzahl Spieler ( > 2 ): ");
+            int m = int.Parse(Console.ReadKey().KeyChar.ToString());
+            Spieler = m;
+            Console.Clear();
         }
 
         static void Main(string[] args)
         {
             Controller HelpObject = new Controller();
-            HelpObject.setSpieler(3);
-            Spiel LetsGo = new Spiel(HelpObject.Spieler);
             HelpObject.startmenu();
+            //Console.WriteLine("Eingegeben: " + HelpObject.Spieler); <-- Nur zum Testen des Spieler-Felds
+            Spiel LetsGo = new Spiel(HelpObject.Spieler);
+
         }
     }
 }
