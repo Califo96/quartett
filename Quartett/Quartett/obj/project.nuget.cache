@@ -1,10 +1,17 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "UZ7tzeygN1qEG2HyQ4U5rNBK3rI2vuaYYQupBxlpveqhzXY+vvkYtc1v3B2N16N5OhQyA3o8vU+Wtc9aB+WxWw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Moritz Schruff\\Documents\\quartett\\Quartett\\Quartett\\Quartett.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Moritz Schruff\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
   ],
+=======
+  "dgSpecHash": "HPuydgGFmS5D+Q7SBT2uer+XigXAOk37ZGJV2uK7LSkf+HEo/T56QUwY3AExstZPSBejuPBIfNxIZz2lvIVkmw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\vinze\\OneDrive\\Documents\\quartett\\Quartett\\Quartett\\Quartett.csproj",
+  "expectedPackageFiles": [],
+>>>>>>> 9b46cbba9daef6303ae4c9d543cdc52ec1f99cf6
   "logs": []
 }
