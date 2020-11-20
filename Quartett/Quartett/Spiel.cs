@@ -39,10 +39,7 @@ namespace Quartett
 
         }
 
-        private void startmenu()
-        {
-
-        }
+        
 
         private int vergleiche()
         {

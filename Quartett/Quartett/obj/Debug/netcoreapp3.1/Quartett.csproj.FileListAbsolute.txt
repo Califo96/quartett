@@ -9,3 +9,16 @@ C:\Users\sebas\Documents\quartett\Quartett\Quartett\bin\Debug\netcoreapp3.1\Quar
 C:\Users\sebas\Documents\quartett\Quartett\Quartett\bin\Debug\netcoreapp3.1\Quartett.pdb
 C:\Users\sebas\Documents\quartett\Quartett\Quartett\obj\Debug\netcoreapp3.1\Quartett.dll
 C:\Users\sebas\Documents\quartett\Quartett\Quartett\obj\Debug\netcoreapp3.1\Quartett.pdb
+C:\Users\vinze\OneDrive\Documents\quartett\Quartett\Quartett\bin\Debug\netcoreapp3.1\Quartett.exe
+C:\Users\vinze\OneDrive\Documents\quartett\Quartett\Quartett\bin\Debug\netcoreapp3.1\Quartett.deps.json
+C:\Users\vinze\OneDrive\Documents\quartett\Quartett\Quartett\bin\Debug\netcoreapp3.1\Quartett.runtimeconfig.json
+C:\Users\vinze\OneDrive\Documents\quartett\Quartett\Quartett\bin\Debug\netcoreapp3.1\Quartett.runtimeconfig.dev.json
+C:\Users\vinze\OneDrive\Documents\quartett\Quartett\Quartett\bin\Debug\netcoreapp3.1\Quartett.dll
+C:\Users\vinze\OneDrive\Documents\quartett\Quartett\Quartett\bin\Debug\netcoreapp3.1\Quartett.pdb
+C:\Users\vinze\OneDrive\Documents\quartett\Quartett\Quartett\obj\Debug\netcoreapp3.1\Quartett.csprojAssemblyReference.cache
+C:\Users\vinze\OneDrive\Documents\quartett\Quartett\Quartett\obj\Debug\netcoreapp3.1\Quartett.AssemblyInfoInputs.cache
+C:\Users\vinze\OneDrive\Documents\quartett\Quartett\Quartett\obj\Debug\netcoreapp3.1\Quartett.AssemblyInfo.cs
+C:\Users\vinze\OneDrive\Documents\quartett\Quartett\Quartett\obj\Debug\netcoreapp3.1\Quartett.csproj.CoreCompileInputs.cache
+C:\Users\vinze\OneDrive\Documents\quartett\Quartett\Quartett\obj\Debug\netcoreapp3.1\Quartett.dll
+C:\Users\vinze\OneDrive\Documents\quartett\Quartett\Quartett\obj\Debug\netcoreapp3.1\Quartett.pdb
+C:\Users\vinze\OneDrive\Documents\quartett\Quartett\Quartett\obj\Debug\netcoreapp3.1\Quartett.genruntimeconfig.cache
