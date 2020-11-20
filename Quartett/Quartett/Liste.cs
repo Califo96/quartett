@@ -90,6 +90,33 @@ namespace Quartett
             return current.getKarte();
         }
 
+        public Karte getRandom()
+        {
+            if(laenge > 1)
+            {
+                Random r = new Random();
+                int i = r.Next(0, laenge - 1);
+
+                toFirst();
+
+                for (int j = 0; j < i; j++)
+                {
+                    next();
+                }
+
+                Karte k = current.getKarte();
+
+                remove();
+
+                return k;
+            } else
+            {
+                return null;
+            }
+            
+
+            
+        }
 
     }
 }
