@@ -32,8 +32,7 @@ namespace Quartett
             {
                 for (int j = 0; i < anzahlSpieler; i++)
                 {
-                    kartenSchlangen[i].Enqueue(kartenStapel.);
-                    kartenStapel.
+                    kartenSchlangen[i].Enqueue(kartenStapel.getRandom());
                 }
             }
 
