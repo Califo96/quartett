@@ -298,7 +298,7 @@ namespace Quartett
             int aktAuswahl;
             while (hatGewonnen == -1)
             {
-                Console.WriteLine("Spieler aktSpieler ist an der Reihe:");
+                Console.WriteLine("Spieler {0} ist an der Reihe:", aktSpieler) ;
                 printcard(aktSpieler);
                 Console.WriteLine("Bitte geben Sie eine Ganzzahl ein welche Kategorie sie spielen möchten:");
                 Console.WriteLine("(0:PS,1:0-100, etc.)");
