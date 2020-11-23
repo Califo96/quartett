@@ -7,7 +7,7 @@ namespace Quartett
     class Spiel
     {
         private int anzahlSpieler;
-        private List<Karte> kartenStapel = new List<Karte>();
+        private Liste kartenStapel = new Liste();
         private Queue<Karte>[] kartenSchlangen;
         private Stack<Karte> tempStapel = new Stack<Karte>();
 
@@ -49,33 +49,206 @@ namespace Quartett
             Karte k27 = new Karte(208, 6.7, 230, 1250, 1598, 4, "Citroen DS3", "FRA");
             Karte k28 = new Karte(400, 4.1, 250, 1605, 2480, 5, "Audi A3 Sportback", "GER");
             Karte k29 = new Karte(200, 8.9, 235, 1733, 1598, 4, "Opel Cascada", "GER");
-            Karte k30 = new Karte(");
-            Karte k31 = new Karte();
-            Karte k32 = new Karte();
+            Karte k30 = new Karte(344, 5.2, 250, 1571, 3696, 6, "Nissan 370Z", "JPN");
+            Karte k31 = new Karte(246, 4.3, 248, 931, 1798, 4, "Lotus Elise", "GBR");
+            Karte k32 = new Karte(465, 3.7, 200, 2118, 0. 0, "Ford Mustang Mach E", "USA");
+        }
 
             private void austeilen()
         {
-            Console.WriteLine("Ich teile die Karten aus.");
+            //Console.WriteLine("Ich teile die Karten aus.");
+
+            Random r = new Random();
+
+            int cards = 32;
+
+            double cardspp = 32 / anzahlSpieler;
+            cardspp = Math.Floor(cardspp);
+
+            for (int i = (int)cardspp; i < 0; i--)
+            {
+                for (int j = 0; i < anzahlSpieler; i++)
+                {
+                    kartenSchlangen[i].Enqueue(kartenStapel.getRandom());
+                }
+            }
+
         }
 
-        private void startmenu()
-        {
 
+
+        private int vergleiche(int vergleichsWert)
+        {
+            Karte[] vergleichsArray = new Karte[anzahlSpieler];
+            int besterWert = 0;
+            double besterWertD = 0;
+            int indexVonBestemWert = 0;
+            int gleicherWertAnzahl = 0;
+
+            for (int i = 0; i < anzahlSpieler - 1; i++)              //Array zum Vergleichen der einzelnen Karten
+            {
+                vergleichsArray[i] = kartenSchlangen[i].Dequeue();
+            }
+
+
+            for (int i = 0; i < anzahlSpieler - 1; i++)
+            {
+                switch (vergleichsWert)
+                {
+                    case 0:                                                        //Fall PS Zahl vergleichen
+                        if (vergleichsArray[i].getPs() > besterWert)
+                        {
+                            besterWert = vergleichsArray[i].getPs();
+                            indexVonBestemWert = i;
+                        }
+                        else if (vergleichsArray[i].getPs() == besterWert)
+                        {
+
+                            
+                            if (gleicherWertAnzahl > 0)
+                            {
+                                gleicherWertAnzahl = gleicherWertAnzahl + 1;
+                            }
+                            else
+                            {
+                                gleicherWertAnzahl = gleicherWertAnzahl + 2;
+                            }
+                        }
+                        break;
+
+                    case 1:                                                             //Fall Beschleunigung 0-100 vergleichen
+                        if (vergleichsArray[i].getBeschleinigung() < besterWertD)
+                        {
+                            besterWert = vergleichsArray[i].getBeschleunigung();
+                            indexVonBestemWert = i;
+                        }
+                        else if (vergleichsArray[i].getBeschleunigung() == besterWertD)
+                        {
+
+                            gleicherWertVorhanden = true;
+                            if (gleicherWertAnzahl > 0)
+                            {
+                                gleicherWertAnzahl = gleicherWertAnzahl + 1;
+                            }
+                            else
+                            {
+                                gleicherWertAnzahl = gleicherWertAnzahl + 2;
+                            }
+                        }
+                        break;
+                    case 2:                                                         //Fall Max Geschwindigkeit vergleichen
+                        if (vergleichsArray[i].getMaxV() > besterWert)
+                        {
+                            besterWert = vergleichsArray[i].getMaxV();
+                            indexVonBestemWert = i;
+                        }
+                        else if (vergleichsArray[i].getMaxV() == besterWert)
+                        {
+
+                            gleicherWertVorhanden = true;
+                            if (gleicherWertAnzahl > 0)
+                            {
+                                gleicherWertAnzahl = gleicherWertAnzahl + 1;
+                            }
+                            else
+                            {
+                                gleicherWertAnzahl = gleicherWertAnzahl + 2;
+                            }
+                        }
+                        break;
+                    case 3:                                                        //Fall Gewicht vergleichen
+                        if (vergleichsArray[i].getGewicht() < besterWert)
+                        {
+                            besterWert = vergleichsArray[i].getGewicht();
+                            indexVonBestemWert = i;
+                        }
+                        else if (vergleichsArray[i].getGewicht() == besterWert)
+                        {
+
+                            gleicherWertVorhanden = true;
+                            if (gleicherWertAnzahl > 0)
+                            {
+                                gleicherWertAnzahl = gleicherWertAnzahl + 1;
+                            }
+                            else
+                            {
+                                gleicherWertAnzahl = gleicherWertAnzahl + 2;
+                            }
+                        }
+                        break;
+                    case 4:                                                     //Fall Hubraum vergleichen
+                        if (vergleichsArray[i].getHubraum() > besterWert)
+                        {
+                            besterWert = vergleichsArray[i].getHubraum();
+                            indexVonBestemWert = i;
+                        }
+                        else if (vergleichsArray[i].getHubraum() == besterWert)
+                        {
+
+                            gleicherWertVorhanden = true;
+                            if (gleicherWertAnzahl > 0)
+                            {
+                                gleicherWertAnzahl = gleicherWertAnzahl + 1;
+                            }
+                            else
+                            {
+                                gleicherWertAnzahl = gleicherWertAnzahl + 2;
+                            }
+                        }
+                        break;
+                    case 5:                                                     //Fall Zylinderanzahl vergleichen
+                        if (vergleichsArray[i].getZylinder() > besterWert)
+                        {
+                            besterWert = vergleichsArray[i].getZylinder();
+                            indexVonBestemWert = i;
+                        }
+                        else if (vergleichsArray[i].getZylinder() == besterWert)
+                        {
+
+                            gleicherWertVorhanden = true;
+                            if (gleicherWertAnzahl > 0)
+                            {
+                                gleicherWertAnzahl = gleicherWertAnzahl + 1;
+                            }
+                            else
+                            {
+                                gleicherWertAnzahl = gleicherWertAnzahl + 2;
+                            }
+                        }
+                        break;
+                }
+            }
+            if (gleicherWertAnzahl == anzahlSpieler)                            
+            {
+                Console.WriteLine("Alle Spieler hatten den selben Wert!");
+                Console.WriteLine("Der nächste Wert in der selben Kategorie entscheidet wer die Karten bekommt.");
+                for(int i = 0; i < anzahlSpieler-1; i++)
+                {
+                    tempStapel.Push(vergleichsArray[i]);
+
+                }
+            }
+            else
+            {
+                Console.WriteLine("Der Gewinner dieser Runde ist Spieler:" + indexVonBestemWert + 1);
+                for(int i = 0; i < anzahlSpieler - 1; i++)
+                {
+                    kartenSchlangen[indexVonBestemWert].Enqueue(vergleichsArray[i]);
+                }
+                
+            }
         }
 
-        private int vergleiche()
-        {
-            return 0;
-        }
+            private void printcard()
+            {
 
-        private void printcard()
-        {
+            }
 
-        }
-
-        private int hatGewonnen()
-        {
-            return 0;
+            private int hatGewonnen()
+            {
+                return 0;
+            }
         }
     }
-}
+
+
