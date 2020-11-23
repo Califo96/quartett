@@ -15,6 +15,7 @@ namespace Quartett
         {
             anzahlSpieler = anzahl;
             kartenSchlangen = new Queue<Karte>[anzahlSpieler];
+            starteSpiel();
         }
 
         private void austeilen()
@@ -268,7 +269,27 @@ namespace Quartett
 
             private int hatGewonnen()
             {
-                return 0;
+            int maxIndex;
+            for (int i = kartenSchlangen.Length; i > 1; i--)
+            {
+                if (kartenSchlangen[i].Count == 0)
+                {
+                    int maxWert = 0;
+                    maxIndex = 0;
+
+                    for (int n = kartenSchlangen.Length; n > 1; n--)
+                    {
+                        if (kartenSchlangen[n].Count > maxWert)
+                        {
+                            maxWert = kartenSchlangen[n].Count;
+                            maxIndex = n;
+                        }
+                        
+                    }
+                    return maxIndex;
+                }
+            }
+            return -1;  
             }
             
         private void starteSpiel()

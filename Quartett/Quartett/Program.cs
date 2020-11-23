@@ -10,47 +10,55 @@ namespace Quartett
 
         private void go()
         {
-            Console.WriteLine("Bevor ihr los legen könnt, sagt uns schnell wie viele Spieler ihr seid!");
-            Console.Write("Anzahl Spieler ( 2 - 6 ): ");
+            Console.WriteLine("\nBevor ihr los legen könnt, sagt uns schnell wie viele Spieler ihr seid!");
+            Console.Write("\nAnzahl Spieler ( 2 - 6 ): ");
+
             int m = int.Parse(Console.ReadKey().KeyChar.ToString());
 
             if (m > 6 || m < 2)
             {
                 Console.Clear();
-                Console.WriteLine("Die Anzahl der angegebenen Spieler liegt außerhalb der erlaubten Spielerzahl oder die Eingabe war nicht numerisch!");
+                Console.WriteLine("\nDie Anzahl der angegebenen Spieler liegt außerhalb der erlaubten Spielerzahl oder die Eingabe war nicht numerisch!");
             }
+
             Spieler = m;
         }
 
         private void regeln()
         {
-            Console.WriteLine("blablablabla");
-            Console.WriteLine("Willst du zurück? dann drücke Z");
+            Console.WriteLine("\nblablablabla");
+            Console.WriteLine("\nWillst du zurück? dann drücke Z");
+
             char b = Console.ReadKey().KeyChar;
             if (b.Equals('z'))
             {
+                Console.Clear();
                 startmenu();
             }
             else if (b.Equals('s'))
             {
+                Console.Clear();
                 go();
             }
         }
         private void startmenu()
         {
 
-            Console.WriteLine("Hallo! Willkommen beim Quartettspiel!");
-            Console.WriteLine("Willst du starten? Dann drücke S");
-            Console.WriteLine("Willst du die Regeln nochmal lesen? Dann drücke R");
+            Console.WriteLine("\nHallo! Willkommen beim Quartettspiel!");
+            Console.WriteLine("\nWillst du starten? Dann drücke S");
+            Console.WriteLine("\nWillst du die Regeln nochmal lesen? Dann drücke R");
             char a = Console.ReadKey().KeyChar;
-            if (a.Equals('s'){
+            if (a.Equals('s'))
+            {
+                Console.Clear();
                 go();
             }
             else if (a.Equals('r'))
             {
+                Console.Clear();
                 regeln();
             }
-            
+
             //Console.WriteLine(m);
             //Console.Clear();
         }
