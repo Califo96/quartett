@@ -1,15 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HPuydgGFmS5D+Q7SBT2uer+XigXAOk37ZGJV2uK7LSkf+HEo/T56QUwY3AExstZPSBejuPBIfNxIZz2lvIVkmw==",
+  "dgSpecHash": "nCEfN2l7EFMSiC+dL82fuG79kSDh6qaMaam3Dio4Rh/HXsBhmvrDPwIfnQ4zyhy1BryGiTE3pz8XDEcsmQO0uw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vinze\\OneDrive\\Documents\\quartett\\Quartett\\Quartett\\Quartett.csproj",
+  "projectFilePath": "C:\\Users\\nikla\\Documents\\quartett\\Quartett\\Quartett\\Quartett.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem beim Lesen der Cachedatei \"C:\\Users\\vinze\\OneDrive\\Documents\\quartett\\Quartett\\Quartett\\obj\\project.nuget.cache\": Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
