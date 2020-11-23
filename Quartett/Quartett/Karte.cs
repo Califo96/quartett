@@ -16,40 +16,40 @@ namespace Quartett
         private string Name;
         private string herLand;
 
-        public int getPs()
+        public int getPs() //FK001
         {
             return ps;
         }
 
-        public double getBeschleunigung()
+        public double getBeschleunigung() //FK002
         {
             return beschleunigung;
         }
-        public int getMaxV()
+        public int getMaxV() //FK003
         {
             return maxV;
         }
-        public int getGewicht()
+        public int getGewicht() //FK004
         {
             return gewicht;
         }
-        public int getHubraum()
+        public int getHubraum() //FK005
         {
             return hubraum;
         }
-        public int getZylinder()
+        public int getZylinder() //FK006
         {
             return zylinder;
         }
-        public int getIndex()
+        public int getIndex() //FK007
         {
             return index;
         }
-        public string getName()
+        public string getName() //FK008
         {
             return Name;
         }
-        public string getHerLand()
+        public string getHerLand() //FK009
         {
             return herLand;
         }
