@@ -261,7 +261,11 @@ namespace Quartett
                     tempStapel.Push(vergleichsArray[i]); //"Karten werden in die Mitte gelegt" -> auf tempStapel zwischengespreichert
 
                 }
+<<<<<<< HEAD
                 return vergleiche(vergleichsWert);     //Es wird erneut verglichen, mit der selben Vergleichskategorie
+=======
+                return vergleiche(vergleichsWert);     //Es wird erneut verglichen, mit der selben Vergleichskategorie -> Rekursiv wird der Gewinner zurückgegeben
+>>>>>>> c65f175f6ccecb1d3b9331346c0f1d6aebb46d71
             }
             else
             {
@@ -343,6 +347,7 @@ namespace Quartett
              
             }
         }
+
 
         }
     }
