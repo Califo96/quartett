@@ -261,7 +261,7 @@ namespace Quartett
                     tempStapel.Push(vergleichsArray[i]); //"Karten werden in die Mitte gelegt" -> auf tempStapel zwischengespreichert
 
                 }
-                vergleiche(vergleichsWert);     //Es wird erneut verglichen, mit der selben Vergleichskategorie
+                return vergleiche(vergleichsWert);     //Es wird erneut verglichen, mit der selben Vergleichskategorie
             }
             else
             {
@@ -301,14 +301,14 @@ namespace Quartett
             private int hatGewonnen()
             {
             int maxIndex;
-            for (int i = kartenSchlangen.Length; i > 1; i--)
+            for (int i = kartenSchlangen.Length-1; i > 1; i--)
             {
                 if (kartenSchlangen[i].Count == 0)
                 {
                     int maxWert = 0;
                     maxIndex = 0;
 
-                    for (int n = kartenSchlangen.Length; n > 1; n--)
+                    for (int n = kartenSchlangen.Length-1; n > 1; n--)
                     {
                         if (kartenSchlangen[n].Count > maxWert)
                         {
