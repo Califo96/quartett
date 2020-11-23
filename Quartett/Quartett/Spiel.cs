@@ -15,6 +15,7 @@ namespace Quartett
         {
             anzahlSpieler = anzahl;
             kartenSchlangen = new Queue<Karte>[anzahlSpieler];
+            erstelleKarten();
             austeilen();
             starteSpiel();
         }
@@ -97,18 +98,16 @@ namespace Quartett
                 kartenSchlangen[i] = new Queue<Karte>();
             }
 
-            Random r = new Random();
-
             int cards = 32;
 
             double cardspp = 32 / anzahlSpieler;
             cardspp = Math.Floor(cardspp);
 
-            for (int i = (int)cardspp; i < 0; i--)
+            for (int i = (int)cardspp; i > 0; i--)
             {
-                for (int j = 0; i < anzahlSpieler; j++)
+                for (int j = 0; j < anzahlSpieler; j++)
                 {
-                    kartenSchlangen[i].Enqueue(kartenStapel.getRandom());
+                    kartenSchlangen[j].Enqueue(kartenStapel.getRandom());
                 }
             }
 
@@ -318,8 +317,9 @@ namespace Quartett
         }
 
             private void printcard(int aktSpieler) {              //Methode, die die oberste Karte des übergebenen Spielers ausgibt
-             Karte aktKarte = kartenSchlangen[aktSpieler].Peek(); //Oberste Karte wird gelesen, ohne entfernt zu werden
-
+            //Console.WriteLine(kartenSchlangen[aktSpieler].Peek().getName());
+            Karte aktKarte = kartenSchlangen[aktSpieler].Dequeue(); //Oberste Karte wird gelesen, ohne entfernt zu werden
+            
 
             Console.WriteLine("Spieler: " + aktSpieler);                              //Ausgabe der Karte 
             Console.WriteLine("--------------------------------------------------");
@@ -378,8 +378,8 @@ namespace Quartett
                 do
                 {
                     Console.WriteLine("Die Zahl muss zwischen 0 und 5 liegen!");
-                    aktAuswahl = (int)Console.ReadKey().KeyChar;
-                } while (aktAuswahl > 0 && aktAuswahl < 6);
+                    aktAuswahl = int.Parse(Console.ReadKey().KeyChar.ToString());
+                } while (aktAuswahl < 0 || aktAuswahl > 6);
                 aktSpieler=vergleiche(aktAuswahl);
 
              
