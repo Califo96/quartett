@@ -11,7 +11,7 @@ namespace Quartett
         private Knoten current;
         private int index;
 
-        private void add(Karte pKarte)
+        public void add(Karte pKarte)
         {
             if (first != null)
             {
@@ -21,21 +21,22 @@ namespace Quartett
                 }
 
                 current.addNext(new Knoten(pKarte));
-            } 
+            }
             else
             {
                 first = new Knoten(pKarte);
+                current = first;
             }
 
             laenge++;
         }
 
-        private void remove()
+        public void remove()
         {
-            
-            if (laenge < 2)
+
+            if (laenge > 1)
             {
-                if(current != first)
+                if (current != first)
                 {
                     Knoten temp = first;
                     while (temp.getNext() != current)
@@ -51,7 +52,7 @@ namespace Quartett
                 }
 
                 laenge--;
-            } 
+            }
             else
             {
                 first = null;
@@ -60,24 +61,43 @@ namespace Quartett
             }
 
             index = 0;
-            
+
+            toFirst();
         }
 
-        private int getIndex()
+        public int getIndex()
         {
             return index;
         }
 
-        private void toFirst()
+        public void toFirst()
         {
-            current = first;
-            index = 0;
+            if (laenge > 0)
+            {
+                current = first;
+                index = 0;
+            }
+            else
+            {
+                current = null;
+                index = 0;
+            }
+
         }
 
-        private void next()
+        public void next()
         {
-            current = current.getNext();
-            index++;
+            if (current.getNext() != null)
+            {
+                current = current.getNext();
+                index++;
+            }
+            else
+            {
+                current = first;
+                index = 0;
+            }
+
         }
 
         public int getLaenge()
@@ -92,7 +112,7 @@ namespace Quartett
 
         public Karte getRandom()
         {
-            if(laenge > 1)
+            if (laenge > 0)
             {
                 Random r = new Random();
                 int i = r.Next(0, laenge - 1);
@@ -109,13 +129,14 @@ namespace Quartett
                 remove();
 
                 return k;
-            } else
+            }
+            else
             {
                 return null;
             }
-            
 
-            
+
+
         }
 
     }

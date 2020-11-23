@@ -15,6 +15,7 @@ namespace Quartett
         {
             anzahlSpieler = anzahl;
             kartenSchlangen = new Queue<Karte>[anzahlSpieler];
+            austeilen();
             starteSpiel();
         }
 
@@ -52,11 +53,49 @@ namespace Quartett
             Karte k30 = new Karte(344, 5.2, 250, 1571, 3696, 6, "Nissan 370Z", "JPN");
             Karte k31 = new Karte(246, 4.3, 248, 931, 1798, 4, "Lotus Elise", "GBR");
             Karte k32 = new Karte(465, 3.7, 200, 2118, 0, 0, "Ford Mustang Mach E", "USA");
+
+            kartenStapel.add(k1);
+            kartenStapel.add(k2);
+            kartenStapel.add(k3);
+            kartenStapel.add(k4);
+            kartenStapel.add(k5);
+            kartenStapel.add(k6);
+            kartenStapel.add(k7);
+            kartenStapel.add(k8);
+            kartenStapel.add(k9);
+            kartenStapel.add(k10);
+            kartenStapel.add(k11);
+            kartenStapel.add(k12);
+            kartenStapel.add(k13);
+            kartenStapel.add(k14);
+            kartenStapel.add(k15);
+            kartenStapel.add(k16);
+            kartenStapel.add(k17);
+            kartenStapel.add(k18);
+            kartenStapel.add(k19);
+            kartenStapel.add(k20);
+            kartenStapel.add(k21);
+            kartenStapel.add(k22);
+            kartenStapel.add(k23);
+            kartenStapel.add(k24);
+            kartenStapel.add(k25);
+            kartenStapel.add(k26);
+            kartenStapel.add(k27);
+            kartenStapel.add(k28);
+            kartenStapel.add(k29);
+            kartenStapel.add(k30);
+            kartenStapel.add(k31);
+            kartenStapel.add(k32);
         }
 
-            private void austeilen()
+        private void austeilen()
         {
             //Console.WriteLine("Ich teile die Karten aus.");
+
+            for(int i = 0; i < anzahlSpieler; i++)
+            {
+                kartenSchlangen[i] = new Queue<Karte>();
+            }
 
             Random r = new Random();
 
@@ -67,7 +106,7 @@ namespace Quartett
 
             for (int i = (int)cardspp; i < 0; i--)
             {
-                for (int j = 0; i < anzahlSpieler; i++)
+                for (int j = 0; i < anzahlSpieler; j++)
                 {
                     kartenSchlangen[i].Enqueue(kartenStapel.getRandom());
                 }
@@ -261,11 +300,10 @@ namespace Quartett
                     tempStapel.Push(vergleichsArray[i]); //"Karten werden in die Mitte gelegt" -> auf tempStapel zwischengespreichert
 
                 }
-<<<<<<< HEAD
-                return vergleiche(vergleichsWert);     //Es wird erneut verglichen, mit der selben Vergleichskategorie
-=======
+
+
                 return vergleiche(vergleichsWert);     //Es wird erneut verglichen, mit der selben Vergleichskategorie -> Rekursiv wird der Gewinner zurückgegeben
->>>>>>> c65f175f6ccecb1d3b9331346c0f1d6aebb46d71
+
             }
             else
             {

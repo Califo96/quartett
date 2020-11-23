@@ -26,7 +26,16 @@ namespace Quartett
 
         public Knoten getNext()
         {
-            return next;
+            if (next != null)
+            {
+                return next;
+            }
+            else
+            {
+                return null;
+            }
+
         }
     }
 }
+
