@@ -26,7 +26,15 @@ namespace Quartett
 
         private void regeln()
         {
-            Console.WriteLine("\nblablablabla");
+            Console.WriteLine("\n1. Die 32 Karten werden auf die 2 bis 6 Spieler verteilt. Überschüssige Karten werden beiseitegelegt.");
+            Console.WriteLine("\n2. Jeder Spieler nimmt seine Karten als Stapel zu sich gewandt auf.");
+            Console.WriteLine("\n3. Der Spieler, welcher an der Reihe ist, wählt ein Attribut seines Autos aus, welches er zu vergleichen wünscht.");
+            Console.WriteLine("\n4. Der Spieler, dessen Wert am besten ist, gewinnt alle Karten und darf sie hinter seinen Stapel stecken.");
+            Console.WriteLine("\n5. Sollten alle Werte gleich sein, so findet ein Stechen statt und die Karten der vorherigen Runde verweilen in der Mitte.");
+            Console.WriteLine("\n6. Das Stechen geschieht mit der nächsten Karte im Stapel jedes Spielers, wobei das zu vergleichende Attribut unverändert bleibt.");
+            Console.WriteLine("\n7. Der Spieler, welcher das Stechen gewinnt, bekommt alle Karten, sowohl die aus der aktuellen Runde als auch die Karten aus der Mitte.");
+            Console.WriteLine("\n8. Sollte ein Spieler keine Karten in seinem Stapel mehr besitzen, wird ein Sieger gekührt. Dies ist der Spieler, welcher dann die meisten Karten besitzt.");
+
             Console.WriteLine("\nWillst du zurück? dann drücke Z");
 
             char b = Console.ReadKey().KeyChar;
