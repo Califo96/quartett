@@ -18,7 +18,7 @@ namespace Quartett
             starteSpiel();
         }
 
-        private void erstelleKarten()
+        private void erstelleKarten() //FS001
         {
             Karte k1 = new Karte(300, 4.9, 230, 2000, 3000, 6, "BMW 3er", "GER");
             Karte k2 = new Karte(100, 10.5, 180, 1800, 1000, 3, "Mini Clubman", "GBR");
@@ -54,7 +54,7 @@ namespace Quartett
             Karte k32 = new Karte(465, 3.7, 200, 2118, 0, 0, "Ford Mustang Mach E", "USA");
         }
 
-            private void austeilen()
+            private void austeilen() //FS002
         {
             //Console.WriteLine("Ich teile die Karten aus.");
 
@@ -77,7 +77,7 @@ namespace Quartett
 
 
 
-        private int vergleiche(int vergleichsWert)
+        private int vergleiche(int vergleichsWert) //FS003
         {
             Karte[] vergleichsArray = new Karte[anzahlSpieler];    //Array zum Vergleichen der einzelnen Karten, da aus Queue nur gelesenw werden kann wenn die Karten entfermt werden
             int besterWert = 0;                                     //Temporärer bester Wert zum Vergleichend der Werte als Integer
@@ -258,7 +258,7 @@ namespace Quartett
                 Console.WriteLine("Der nächste Wert in der selben Kategorie entscheidet wer die Karten bekommt.");
                 for(int i = 0; i < anzahlSpieler-1; i++)
                 {
-                    tempStapel.Push(vergleichsArray[i]); //"Karten werden in die Mitte gelegt" -> auf tempStapel zwischengespreichert
+                    tempStapel.Push(vergleichsArray[i]); //"Karten werden in die Mitte gelegt" -> auf tempStapel zwischengespeichert
 
                 }
 <<<<<<< HEAD
@@ -279,7 +279,7 @@ namespace Quartett
             }
         }
 
-            private void printcard(int aktSpieler) {              //Methode, die die oberste Karte des übergebenen Spielers ausgibt
+            private void printcard(int aktSpieler) {              //FS004 --> Methode, die die oberste Karte des übergebenen Spielers ausgibt
              Karte aktKarte = kartenSchlangen[aktSpieler].Peek(); //Oberste Karte wird gelesen, ohne entfernt zu werden
 
 
@@ -302,7 +302,7 @@ namespace Quartett
             Console.WriteLine("---------------------------------------------");
              }
 
-            private int hatGewonnen()
+            private int hatGewonnen() //FS005
             {
             int maxIndex;
             for (int i = kartenSchlangen.Length-1; i > 1; i--)
@@ -322,12 +322,13 @@ namespace Quartett
                         
                     }
                     return maxIndex;
+
                 }
             }
             return -1;  
             }
             
-        private void starteSpiel()
+        private void starteSpiel() //FS006
         {
             int aktSpieler=0;
             int aktAuswahl;

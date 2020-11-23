@@ -8,7 +8,7 @@ namespace Quartett
     {
         private int Spieler;
 
-        private void go()
+        private void go() //FC001
         {
             Console.WriteLine("\nBevor ihr los legen könnt, sagt uns schnell wie viele Spieler ihr seid!");
             Console.Write("\nAnzahl Spieler ( 2 - 6 ): ");
@@ -24,7 +24,7 @@ namespace Quartett
             Spieler = m;
         }
 
-        private void regeln()
+        private void regeln() //FC002
         {
             Console.WriteLine("\n1. Die 32 Karten werden auf die 2 bis 6 Spieler verteilt. Überschüssige Karten werden beiseitegelegt.");
             Console.WriteLine("\n2. Jeder Spieler nimmt seine Karten als Stapel zu sich gewandt auf.");
@@ -49,7 +49,7 @@ namespace Quartett
                 go();
             }
         }
-        private void startmenu()
+        private void startmenu() //FC003
         {
 
             Console.WriteLine("\nHallo! Willkommen beim Quartettspiel!");
@@ -71,7 +71,7 @@ namespace Quartett
             //Console.Clear();
         }
 
-        static void Main(string[] args)
+        static void Main(string[] args) //FC004
         {
             Controller HelpObject = new Controller();
             HelpObject.startmenu();
