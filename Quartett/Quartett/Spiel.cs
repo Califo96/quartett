@@ -115,7 +115,7 @@ namespace Quartett
 
 
 
-        private int vergleiche(int vergleichsWert)
+        private int vergleiche(int vergleichsWert, int aktSpieler)
         {
             Karte[] vergleichsArray = new Karte[anzahlSpieler];    //Array zum Vergleichen der einzelnen Karten, da aus Queue nur gelesenw werden kann wenn die Karten entfermt werden
             int besterWert = 0;                                     //Temporärer bester Wert zum Vergleichend der Werte als Integer
@@ -123,7 +123,7 @@ namespace Quartett
             int indexVonBestemWert = 0;                           //Index an welcher Stelle der beste Wert zu finden ist
             int gleicherWertAnzahl = 0;                            //Anzahl an gleichen Werten 
 
-            for (int i = 0; i < anzahlSpieler - 1; i++)                 //Befüllen des Arrays             
+            for (int i = 0; i < anzahlSpieler; i++)                 //Befüllen des Arrays             
             {
                 vergleichsArray[i] = kartenSchlangen[i].Dequeue();      //Karte des jeweiligen PSielers wird an entsprechende Array Stelle gespeichert
             }
@@ -149,13 +149,21 @@ namespace Quartett
 
             }
 
-            
-            for (int i = 1; i < anzahlSpieler - 1; i++)             //Schleife die die einzelnen Werte der Spieler vergleicht
+            for (int i = 0; i < anzahlSpieler; i++)
             {
+                if(i != aktSpieler)
+                {
+                    printcard(vergleichsArray[i]);
+                }
+            }
+            
+            for (int i = 1; i < anzahlSpieler; i++)             //Schleife die die einzelnen Werte der Spieler vergleicht
+            {
+                
                 switch (vergleichsWert)                             
                 {
                     case 0:                                             //Fall PS Zahl vergleichen
-                        printcard(vergleichsArray[i]);                                     //Karte des Spielers mit dem verglichen wird, wird ausgegeben -> Aufruf der Methode printcard                        
+                                                             //Karte des Spielers mit dem verglichen wird, wird ausgegeben -> Aufruf der Methode printcard                        
                         if (vergleichsArray[i].getPs() > besterWert)       //Wenn PS Zahl>als die des temporären besten Wertes
                         {
                             Console.WriteLine("Spieler" + i + "gewinnt mit seiner Karte gegen die von Spieler " + indexVonBestemWert); //Ausgabe
@@ -179,7 +187,6 @@ namespace Quartett
                         break;
 
                     case 1:
-                        printcard(vergleichsArray[i]);                                                           //Fall Beschleunigung 0-100 vergleichen
                                                                                                 //Bedingungen sind identisch mit denen aus case 0!
                         if (vergleichsArray[i].getBeschleunigung() < besterWertD)
                         {
@@ -201,7 +208,6 @@ namespace Quartett
                         }
                         break;
                     case 2:
-                        printcard(vergleichsArray[i]);                                                        //Fall Max Geschwindigkeit vergleichen
                                                                                                               //Bedingungen sind identisch mit denen aus Fall 0!
                         if (vergleichsArray[i].getMaxV() > besterWert)
                         {
@@ -223,7 +229,6 @@ namespace Quartett
                         }
                         break;
                     case 3:
-                        printcard(vergleichsArray[i]);                                               //Fall Gewicht vergleichen
                         if (vergleichsArray[i].getGewicht() < besterWert)           //Bedingungen sind identisch mit denen aus Fall 0!
                         {
                             Console.WriteLine("Spieler" + i + "gewinnt mit seiner Karte gegen die von Spieler " + indexVonBestemWert);
@@ -244,7 +249,6 @@ namespace Quartett
                         }
                         break;
                     case 4:
-                        printcard(vergleichsArray[i]);                                                           //Fall Hubraum vergleichen
                         if (vergleichsArray[i].getHubraum() > besterWert)                       //Bedingungen sind identisch mit denen aus Fall 0!
                         {                                                                   
                             Console.WriteLine("Spieler" + i + "gewinnt mit seiner Karte gegen die von Spieler " + indexVonBestemWert);
@@ -265,16 +269,15 @@ namespace Quartett
                         }
                         break;
                     case 5:
-                        printcard(vergleichsArray[i]);                                                   //Fall Zylinderanzahl vergleichen
                         if (vergleichsArray[i].getZylinder() > besterWert)             //Bedingungen sind identisch mit denen aus Fall 0!
                         {
-                            Console.WriteLine("Spieler" + i + "gewinnt mit seiner Karte gegen die von Spieler " + indexVonBestemWert);
+                            Console.WriteLine("Spieler " + i + " gewinnt mit seiner Karte gegen die von Spieler " + indexVonBestemWert);
                             besterWert = vergleichsArray[i].getZylinder();
                             indexVonBestemWert = i;
                         }
                         else if (vergleichsArray[i].getZylinder() == besterWert)
                         {
-                            Console.WriteLine("Spieler" + i + "und Spieler " + indexVonBestemWert + " haben den selben Wert");
+                            Console.WriteLine("Spieler " + i + " und Spieler " + indexVonBestemWert + " haben den selben Wert");
                             if (gleicherWertAnzahl > 0)
                             {
                                 gleicherWertAnzahl = gleicherWertAnzahl + 1;
@@ -294,20 +297,27 @@ namespace Quartett
             {
                 Console.WriteLine("Alle Spieler hatten den selben Wert!");
                 Console.WriteLine("Der nächste Wert in der selben Kategorie entscheidet wer die Karten bekommt.");
-                for(int i = 0; i < anzahlSpieler-1; i++)
+                for(int i = 0; i < anzahlSpieler; i++)
                 {
                     tempStapel.Push(vergleichsArray[i]); //"Karten werden in die Mitte gelegt" -> auf tempStapel zwischengespreichert
 
                 }
 
+                int n = vergleiche(vergleichsWert, aktSpieler);
 
-                return vergleiche(vergleichsWert);     //Es wird erneut verglichen, mit der selben Vergleichskategorie -> Rekursiv wird der Gewinner zurückgegeben
+                while (tempStapel.Count > 0)
+                {
+                    kartenSchlangen[n].Enqueue(tempStapel.Pop());
+                }
+
+                return n;     //Es wird erneut verglichen, mit der selben Vergleichskategorie -> Rekursiv wird der Gewinner zurückgegeben
+
 
             }
             else
             {
-                Console.WriteLine("Der Gewinner dieser Runde ist Spieler:" + indexVonBestemWert + 1);
-                for(int i = 0; i < anzahlSpieler - 1; i++)
+                Console.WriteLine("Der Gewinner dieser Runde ist Spieler: " + indexVonBestemWert);
+                for(int i = 0; i < anzahlSpieler; i++)
                 {
                     kartenSchlangen[indexVonBestemWert].Enqueue(vergleichsArray[i]); //Karten werden dem Gewinner der Runde an seine Kartenschlange angehangen
                 }
@@ -319,7 +329,8 @@ namespace Quartett
             private void printcard(Karte aktKarte) {              //Methode, die die oberste Karte des übergebenen Spielers ausgibt
             //Console.WriteLine(kartenSchlangen[aktSpieler].Peek().getName());
 
-            Console.WriteLine("Spieler: " + aktSpieler);                              //Ausgabe der Karte 
+            //Console.WriteLine("Spieler: " + aktSpieler);                              //Ausgabe der Karte 
+            Console.WriteLine("");
             Console.WriteLine("--------------------------------------------------");
             Console.WriteLine("| "+ aktKarte.getName()+                   "| ");
             Console.WriteLine("| "+ aktKarte.getHerLand()+                "| ");
@@ -341,14 +352,14 @@ namespace Quartett
             private int hatGewonnen()
             {
             int maxIndex;
-            for (int i = kartenSchlangen.Length-1; i > 1; i--)
+            for (int i = kartenSchlangen.Length-1; i > 0; i--)
             {
                 if (kartenSchlangen[i].Count == 0)
                 {
                     int maxWert = 0;
                     maxIndex = 0;
 
-                    for (int n = kartenSchlangen.Length-1; n > 1; n--)
+                    for (int n = kartenSchlangen.Length-1; n > 0; n--)
                     {
                         if (kartenSchlangen[n].Count > maxWert)
                         {
@@ -366,22 +377,45 @@ namespace Quartett
         private void starteSpiel()
         {
             int aktSpieler=0;
-            int aktAuswahl;
+            int aktAuswahl = 0;
             while (hatGewonnen() == -1)
             {
+                Console.WriteLine("\nKlicken Sie eine Taste um zur nächsten Runde zu gehen!");
+                Console.ReadKey();
+                Console.Clear();
                 Console.WriteLine("Spieler {0} ist an der Reihe:", aktSpieler) ;
                 printcard(kartenSchlangen[aktSpieler].Peek());
                 Console.WriteLine("Bitte geben Sie eine Ganzzahl ein welche Kategorie sie spielen möchten:");
                 Console.WriteLine("(0:PS,1:0-100, etc.)");
                 do
-                {
-                    Console.WriteLine("Die Zahl muss zwischen 0 und 5 liegen!");
-                    aktAuswahl = int.Parse(Console.ReadKey().KeyChar.ToString());
+                {                    
+                    bool fehler = false;
+                    do {
+                        fehler = false;
+                        try
+                        {
+                            Console.WriteLine("Die Zahl muss zwischen 0 und 5 liegen!");
+                            aktAuswahl = int.Parse(Console.ReadKey().KeyChar.ToString());
+                        }
+                        catch (System.FormatException e)
+                        {
+                            Console.WriteLine("Die Eingabe ist fehlerhaft!");
+                            fehler = true;
+                        }
+                    } while(fehler);
+                    
                 } while (aktAuswahl < 0 || aktAuswahl > 6);
-                aktSpieler=vergleiche(aktAuswahl);
+                aktSpieler=vergleiche(aktAuswahl, aktSpieler);
+
+                for(int i = 0; i < anzahlSpieler; i++)
+                {
+                    Console.WriteLine("Spieler " + i + " hat " + kartenSchlangen[i].Count + " Karten.");
+                }
 
              
             }
+
+            Console.WriteLine("Jemand hat gewonnen!");
         }
 
 
