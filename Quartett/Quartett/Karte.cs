@@ -56,14 +56,14 @@ namespace Quartett
 
         public Karte(int pps, double pbeschleunigung, int pmaxV, int pgewicht, int phubraum, int pzylinder, string pname, string pherLand)
         {
-            ps = pps;
-            beschleunigung = pbeschleunigung;
-            maxV = pmaxV;
-            gewicht = pgewicht;
-            hubraum = phubraum;
-            zylinder = pzylinder;
-            Name = pname;
-            herLand = pherLand;
+            ps = pps; //D001
+            beschleunigung = pbeschleunigung; //D002
+            maxV = pmaxV; //D003
+            gewicht = pgewicht; //D004
+            hubraum = phubraum; //D005
+            zylinder = pzylinder; //006
+            Name = pname; //D007
+            herLand = pherLand; //D008
         } 
     }
 }
