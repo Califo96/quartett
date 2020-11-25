@@ -7,7 +7,7 @@ namespace Quartett
     class Liste
     {
         private Knoten first;
-        private int laenge;
+        private int laenge = 0;
         private Knoten current;
         private int index;
 
@@ -115,7 +115,7 @@ namespace Quartett
             if (laenge > 0)
             {
                 Random r = new Random();
-                int i = r.Next(0, laenge - 1);
+                int i = r.Next(0, laenge);
 
                 toFirst();
 
